@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Enrollment - Grow Course</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lexend Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Lexend', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 py-4 px-4 md:px-6">
+    <div class="flex items-center space-x-4">
+      <img src="./Course pictures/logo.png" alt="Logo" class="h-10 w-15">
+      <a class="text-xl font-bold text-yellow-600" href="home.html" >Grow Course</a>
+    </div>
+  </div>
+</header>
+  <!-- Enrollment Form Section -->
+  <main class="max-w-3xl mx-auto px-4 md:px-6 py-12">
+    <h1 class="text-3xl font-bold mb-6 text-center">Enroll in Course</h1>
+    <form id="enrollmentForm" class="bg-white rounded shadow p-6 space-y-4">
+      <!-- Student Details -->
+      <div>
+        <label class="block text-sm font-semibold mb-1" for="name">Full Name</label>
+        <input type="text" id="name" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-yellow-500"/>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-1" for="email">Email Address</label>
+        <input type="email" id="email" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-yellow-500"/>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-1" for="phone">Phone Number</label>
+        <input type="tel" id="phone" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-yellow-500"/>
+      </div>
+<div>
+  <label class="block text-sm font-semibold mb-1" for="course">Selected Course</label>
+  <select id="course" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-yellow-500">
+    <option value="" disabled selected>Select a course</option>
+    <optgroup label="Development Courses">
+      <option value="The Complete Web Development Bootcamp">The Complete Web Development Bootcamp</option>
+      <option value="Advanced JavaScript Techniques">Advanced JavaScript Techniques</option>
+      <option value="Python for Data Science">Python for Data Science</option>
+    </optgroup>
+    <optgroup label="Business Courses">
+      <option value="The Business Intelligence Analyst Course">The Business Intelligence Analyst Course</option>
+      <option value="Strategic Management and Leadership">Strategic Management and Leadership</option>
+      <option value="Digital Marketing Masterclass">Digital Marketing Masterclass</option>
+    </optgroup>
+    <optgroup label="Finance and Accounting Courses">
+      <option value="The Complete Financial Analyst Course 2023">The Complete Financial Analyst Course 2023</option>
+      <option value="Investment Banking and Capital Markets">Investment Banking and Capital Markets</option>
+      <option value="Corporate Finance and Valuation">Corporate Finance and Valuation</option>
+    </optgroup>
+    <optgroup label="IT and Software Courses">
+      <option value="The IT Professional's Guide to Cloud Computing">The IT Professional's Guide to Cloud Computing</option>
+      <option value="Cybersecurity Essentials">Cybersecurity Essentials</option>
+      <option value="Network Administration and Security">Network Administration and Security</option>
+    </optgroup>
+  </select>
+</div>
+
+      <!-- Payment QR Code -->
+      <div class="text-center mt-6">
+        <p class="font-semibold mb-2">Scan to Pay</p>
+        <img src="./Course pictures/project.png" alt="Payment QR Code" class="mx-auto w-40 h-40 rounded shadow"/>
+      </div>
+
+      <!-- Paid Checkbox -->
+      <div class="flex items-center mt-4">
+        <input type="checkbox" id="paidCheckbox" class="h-4 w-4 text-yellow-500 border-gray-300 rounded focus:ring-yellow-500"/>
+        <label for="paidCheckbox" class="ml-2 text-sm">I confirm I have completed the payment.</label>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submitButton" disabled class="w-full bg-yellow-500 text-white font-semibold py-2 rounded opacity-50 cursor-not-allowed transition">
+        Enroll Course
+      </button>
+    </form>
+
+    <!-- Thank You Message (hidden by default) -->
+    <div id="thankYouMessage" class="hidden text-center mt-8 bg-green-100 text-green-700 py-4 px-6 rounded">
+      <h2 class="text-2xl font-bold">Thank You!</h2>
+      <p>Your enrollment has been received successfully.</p>
+    </div>
+  </main>
+
+<div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4 text-center">
+  <a href="home.html" class="w-full md:w-auto inline-block px-6 py-3 bg-yellow-300 text-yellow-800 font-semibold rounded hover:bg-yellow-400 transition">
+    &larr; Back To Home 
+  </a>
+  <a href="coursecat.html" class="w-full md:w-auto inline-block px-6 py-3 bg-yellow-300 text-yellow-800 font-semibold rounded hover:bg-yellow-400 transition">
+    Back To Courses &rarr;
+  </a>
+</div>
+
+
+  <!-- Footer -->
+ <footer class="bg-white shadow mt-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row justify-center items-center text-sm text-gray-500">
+      <p>Thank You For Choosing Us</p>
+    </div>
+  </footer>
+
+  <!-- Script to handle checkbox and form -->
+  <script>
+    const paidCheckbox = document.getElementById("paidCheckbox");
+    const submitButton = document.getElementById("submitButton");
+    const enrollmentForm = document.getElementById("enrollmentForm");
+    const thankYouMessage = document.getElementById("thankYouMessage");
+
+    paidCheckbox.addEventListener("change", () => {
+      if (paidCheckbox.checked) {
+        submitButton.disabled = false;
+        submitButton.classList.remove("opacity-50", "cursor-not-allowed");
+      } else {
+        submitButton.disabled = true;
+        submitButton.classList.add("opacity-50", "cursor-not-allowed");
+      }
+    });
+
+    enrollmentForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      enrollmentForm.classList.add("hidden");
+      thankYouMessage.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

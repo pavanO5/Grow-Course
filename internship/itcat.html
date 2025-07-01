@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grow Course</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lexend Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Lexend', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 py-4 px-4 md:px-6">
+    <div class="flex items-center space-x-4">
+      <img src="./Course pictures/logo.png" alt="Logo" class="h-10 w-15">
+      <a class="text-xl font-bold text-yellow-600" href="home.html" >Grow Course</a>
+    </div>
+    <nav class="flex space-x-4">
+      <a href="home.html" class="text-gray-700 hover:text-yellow-600 font-semibold">Home</a>
+      <a href="coursecat.html" class="text-gray-700 hover:text-yellow-600 font-semibold">Courses</a>
+      <a href="support.html" class="text-gray-700 hover:text-yellow-600 font-semibold">Support</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- Courses by Category -->
+  <main class="max-w-7xl mx-auto px-4 md:px-6 py-12 space-y-16">
+<section>
+      <h2 class="text-2xl font-bold mb-6">IT and Software Courses</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="course10.html" class="block bg-white rounded shadow p-4 hover:shadow-lg transition">
+          <img src="./Course pictures/The IT Professional's Guide to Cloud Computing.jpg" class="rounded mb-4" alt="">
+          <h3 class="font-semibold">The IT Professional's Guide to Cloud Computing</h3>
+        </a>
+        <a href="course11.html" class="block bg-white rounded shadow p-4 hover:shadow-lg transition">
+          <img src="./Course pictures/Cybersecurity Essentials.jpg" class="rounded mb-4" alt="">
+          <h3 class="font-semibold">Cybersecurity Essentials</h3>
+        </a>
+        <a href="course12.html" class="block bg-white rounded shadow p-4 hover:shadow-lg transition">
+          <img src="./Course pictures/Network Administration and Security.jpg" class="rounded mb-4" alt="">
+          <h3 class="font-semibold">Network Administration and Security</h3>
+        </a>
+      </div>
+    </section>
+    <!-- More courses message -->
+    <section class="text-center mt-12">
+      <p class="text-lg font-semibold text-gray-600">More courses will be added soon.</p>
+    </section>
+    <div class="text-center mt-8">
+  <a href="coursecat.html" class="inline-block px-6 py-3 bg-yellow-200 text-yellow-800 font-semibold rounded hover:bg-yellow-300 transition">
+    Explore Other Categories &rarr;
+  </a>
+</div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row justify-center items-center text-sm text-gray-500">
+      <p>Thank You For Choosing us</p>
+    </div>
+  </footer>
+
+</body>
+</html>
